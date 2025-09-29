@@ -1,0 +1,110 @@
+
+.body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.clocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.clock-card {
+    background-color: #e8f5e9; /* Light green background */
+    border-radius: 10px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.clock-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.clock-card h2 {
+    color: #388e3c; /* Darker green for city names */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.clock-card .time {
+    font-size: 3em;
+    font-weight: bold;
+    color: #1a5e20; /* Even darker green for time */
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    .clocks-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .clock-card h2 {
+        font-size: 1.5em;
+    }
+    .clock-card .time {
+        font-size: 2.5em;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .clocks-grid {
+        grid-template-columns: 1fr;
+    }
+    .clock-card h2 {
+        font-size: 1.6em;
+    }
+    .clock-card .time {
+        font-size: 2.8em;
+    }
+}
